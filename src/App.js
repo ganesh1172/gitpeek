@@ -4,7 +4,7 @@ import { Router, Switch, Route } from 'react-router-dom';
 import { useDarkMode } from './useDarkMode';
 import history from './history';
 import Home from './pages/home';
-import { light as LightTheme, dark as DarkTheme } from './style';
+import { light as LightTheme, dark as DarkTheme, GlobalStyle } from './style';
 
 
 const App = () => {
@@ -15,6 +15,7 @@ const App = () => {
         setTheme(state => state.id === 'light' ? DarkTheme : LightTheme)
       }
     }}>
+      <GlobalStyle />
       <Router history={history}>
         <Switch>
           <Route path="/" exact component={Home} />
