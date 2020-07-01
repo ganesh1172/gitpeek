@@ -4,6 +4,7 @@ import { Router, Switch, Route } from 'react-router-dom';
 import { useDarkMode } from './useDarkMode';
 import history from './history';
 import Home from './pages/home';
+import UserProfile from './pages/UserProfile';
 import { light as LightTheme, dark as DarkTheme, GlobalStyle } from './style';
 
 
@@ -19,6 +20,7 @@ const App = () => {
       <Router history={history}>
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/user/:id" component={UserProfile} />
         </Switch>
       </Router>
     </ThemeProvider>
