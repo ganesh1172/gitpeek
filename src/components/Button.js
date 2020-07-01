@@ -4,7 +4,7 @@ const Button = styled.button`
     color: rgb(255,255,255);
     border: none;
     background-image: linear-gradient(to right, #01F2FC,#1787CF);
-    padding: 0.5rem 0.5rem;
+    padding: 0.7rem 1rem;
     border-radius: 5px;
     border-bottom: 2px solid transparent;
     cursor: pointer;
