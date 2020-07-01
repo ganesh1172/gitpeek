@@ -1,16 +1,16 @@
 import React, { useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
-import { Logo, Toggle } from '../components';
+import { Logo, Toggle, Form } from '../components';
 
 const StyledHeader = styled.span`
     height: 7rem;
     display: flex;
     align-item: center;
-    padding: 1rem 6rem;
+    padding: 3rem 6rem;
     justify-content: flex-end;
 
     & button svg {
-        font-size: 2rem;
+        font-size: 3rem;
         vertical-align: middle;
     }
 
@@ -48,6 +48,7 @@ const Home = () => {
             </StyledHeader>
             <Container>
                 <Logo width="280px" />
+                <Form displaySpan />
             </Container>
         </>
     );
