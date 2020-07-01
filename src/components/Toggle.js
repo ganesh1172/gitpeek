@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FaFireExtinguisher, FaFireAlt } from "react-icons/fa";
+import { GiThermometerCold, GiThermometerHot } from "react-icons/gi";
 import Button from './Button';
 
 const ToggleSpan = styled.span`
@@ -24,14 +24,14 @@ const ToggleSpan = styled.span`
 
     & svg {
         vertical-align: middle;
-        font-size: 2rem;
+        font-size: 3rem;
     }
 `;
 
 const Toggle = ({ isDark, onToggle }) => {
     return (
         <ToggleSpan>
-            <Button onClick={onToggle}>{isDark ? <FaFireExtinguisher /> : <FaFireAlt />}</Button>
+            <Button onClick={onToggle}>{isDark ? <GiThermometerCold /> : <GiThermometerHot />}</Button>
         </ToggleSpan>
     );
 };
