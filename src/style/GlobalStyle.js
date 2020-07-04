@@ -3,7 +3,8 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
     * {
         margin: 0;
-        padding: 0; 
+        padding: 0;
+        font-family: Inter, system, -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Arial, sans-serif; 
     }
     *,
     *::before,
@@ -27,6 +28,7 @@ const GlobalStyle = createGlobalStyle`
         /* background-color: #F0F1F6; */
         background-color: #F5F6FA;
         background-color: ${p => p.theme.bgColor};
+        
     }
     ul {
         list-style: none;
