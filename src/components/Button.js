@@ -3,8 +3,9 @@ import styled from 'styled-components';
 const Button = styled.button`
     color: rgb(255,255,255);
     border: none;
-    background-image: linear-gradient(to right, #01F2FC,#1787CF);
-    padding: 0.7rem 1rem;
+    // background-image: linear-gradient(to right, #01F2FC,#1787CF);
+    background: #5c75f6;
+    padding: 0.7rem 2rem;
     border-radius: 5px;
     border-bottom: 2px solid transparent;
     cursor: pointer;
