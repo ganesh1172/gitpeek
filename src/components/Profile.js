@@ -1,20 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 // import LanguageContext from '../contexts/LanguageContext';
-import Button from './Button';
 import { FiActivity } from 'react-icons/fi';
-import { GoBriefcase, GoLocation, GoMail, GoGlobe, GoMarkGithub } from 'react-icons/go';
+import { GoBriefcase, GoLocation, GoMail, GoGlobe, GoMarkGithub, GoRepo, GoOrganization, GoPerson } from 'react-icons/go';
 
 
 const ProfileSection = styled.section`
     position: relative;
     width: 35rem;
-    margin: 10rem 61rem;
+    margin: 6rem 61rem;
 `;
 
 const ProfileCard = styled.div`
     width: 35rem;
-    height: 45rem;    
+    height: 52rem;    
     display: flex;
     justify-content: center;
     background-color: ${p => p.theme.cardColor};
@@ -86,7 +85,7 @@ const FlexContainer = styled.div`
 
 const IconSpan = styled.span`
     display: ${(p) => (p.available ? "inline" : "none")};
-    margin-right: ${(p) => (p.company ? "1rem" : "0")};
+    margin-left: ${(p) => (p.company ? "1rem" : "0")};
     & svg {
         vertical-align: middle;
         margin-bottom: 4px;
@@ -95,12 +94,69 @@ const IconSpan = styled.span`
         margin-bottom: 0;
     }
 `;
+const ProfileIcons = styled.div`
+    display: flex;
+    margin: 5px 0px;
+    justify-content: center;
+`;
+
+const ProfileItems = styled.div`
+    margin-right: 15px;
+    height: 9rem;
+    width: 9.5rem;
+    border-radius: 5px;
+    margin-bottom: 0px;
+    background-image: linear-gradient(to right, #01F2FC,#1787CF);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 1rem 2rem 0 rgba(0,0,0, .2);
+    }
+
+    &:last-child{
+        margin-right: 0px;
+    }
+`;
+
+const StatsIcon = styled.span`
+    font-size: 24px;
+`;
+
+const StatsTitle = styled.h2`
+    font-size: 12px;
+    text-transform: uppercase;
+`;
+
+const StatsNumber = styled.span`
+    font-size: 24px;
+`;
+
+const Button = styled.button`
+    color: rgb(255,255,255);
+    border: none;
+    background-image: linear-gradient(to right, #01F2FC,#1787CF);
+    padding: 1.2rem 2rem;
+    border-radius: 5px;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    align-items: center;
+    transition: all 0.3s;
+    
+    &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 1rem 2rem 0 rgba(0,0,0, .2);
+    }
+`;
+
 
 const LocationDiv = styled.div`
 `;
 
 
-const Profile = (props) => {
+const Profile = (props, userData) => {
     const {
         avatar_url,
         name,
@@ -109,7 +165,11 @@ const Profile = (props) => {
         email,
         blog,
         login,
-        html_url
+        html_url,
+        public_repos,
+        followers,
+        following
+
     } = props.userData;
 
     let website = blog;
@@ -157,6 +217,25 @@ const Profile = (props) => {
                                 </IconSpan>
                             </li>
                             <li>
+                                <ProfileIcons>
+                                    <ProfileItems>
+                                        <StatsIcon><GoRepo /></StatsIcon>
+                                        <StatsTitle>Repositories</StatsTitle>
+                                        <StatsNumber>{public_repos}</StatsNumber>
+                                    </ProfileItems>
+                                    <ProfileItems>
+                                        <StatsIcon><GoOrganization /></StatsIcon>
+                                        <StatsTitle>Followers</StatsTitle>
+                                        <StatsNumber>{followers}</StatsNumber>
+                                    </ProfileItems>
+                                    <ProfileItems>
+                                        <StatsIcon><GoPerson /></StatsIcon>
+                                        <StatsTitle>Following</StatsTitle>
+                                        <StatsNumber>{following}</StatsNumber>
+                                    </ProfileItems>
+                                </ProfileIcons>
+                            </li>
+                            <li>
                                 <IconSpan available={html_url}>
                                     <a href={html_url} target="_blank" rel="noopener noreferrer">
                                         <Button><GoMarkGithub />@{login}</Button>
@@ -164,7 +243,6 @@ const Profile = (props) => {
                                 </IconSpan>
                             </li>
                         </ul>
-
                     </UserInfoDiv>
                 </ProfileCard>
             </ProfileSection>
