@@ -13,7 +13,7 @@ const App = () => {
   return (
     <ThemeProvider theme={{
       ...theme, setTheme: () => {
-        setTheme(state => state.id === 'light' ? DarkTheme : LightTheme)
+        setTheme(state => state.id === 'dark' ? LightTheme : DarkTheme)
       }
     }}>
       <GlobalStyle />
