@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import history from '../history';
 import styled from 'styled-components';
-import Button from './Button';
-import { RiUserSearchLine } from 'react-icons/ri'
 
 const Form = styled.form`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+
     @media only screen and (max-width: 600px) {
         & button {
             align-self: flex-start;
@@ -23,31 +22,21 @@ const Form = styled.form`
 `;
 
 const Input = styled.input`
-    font-size: 1.8rem;
+    font-size: 3.5rem;
     font-family: inherit;
     color: inherit;
-    padding: 1rem 6rem;
+    padding: 1.2rem 2rem;
     border-radius: 5px;
-    border: none;
+    text-align: center;
+    color: #1F8BDB;
     background-color: ${p => p.theme.inputColor};
-    border-bottom: 3px solid transparent;
-    margin-left: 6px;
-    margin-right: 1px;
+    margin-left: 1.2rem;
     transition: all 0.3s;
+    border:0;
+    border-bottom: 2px solid #3399FF;
+
     &:focus {
         outline: none;
-        box-shadow: 0 1rem 2rem 0 rgba(0,0,0, .2);
-        // transform: translateY(-1px);
-        border-bottom: 3px solid #0098f0;
-    }
-    &::placeholder {
-        color: #aaa;
-    }
-    @media only screen and (max-width: 600px) {
-        text-align: center;
-        margin: 0;
-        // margin-right: 15px;
-        margin-bottom: 10px;
     }
 `;
 
@@ -72,10 +61,7 @@ const SearchForm = ({ displaySpan }) => {
     return (
         <Form onSubmit={(e) => onFormSubmit(e, user)} displaySpan={displaySpan}>
             <Span>github.com/</Span>
-            <Input value={user} onChange={(e) => updateUser(e.target.value)} type="text" placeholder="Enter Github Username" />
-            <Button>
-                <RiUserSearchLine />
-            </Button>
+            <Input value={user} onChange={(e) => updateUser(e.target.value)} type="text" />
         </Form>
     );
 };
