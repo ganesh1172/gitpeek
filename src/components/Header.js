@@ -6,21 +6,23 @@ import Toggle from "./Toggle";
 import Form from "./Form";
 
 const StyledHeader = styled.header`
-    background-color: ${p => p.theme.cardColor};
+    box-shadow: 0 1rem 2rem 0 rgba(39,41,61,0.1);    
     min-height: 7rem;
-    box-shadow: 0 1rem 2rem 0 rgba(0,0,0,0.1);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    padding: 0.2rem 6rem;
+    padding: 0.1rem 6rem;
     justify-content: space-between;
+    background-color: ${p => p.theme.cardColor};
+
 
     @media only screen and (max-width: 767px) {
         padding: 0.5rem 2rem;
     }
 
     & input {
-        font-size: 1.5rem;
+        font-size: 2rem;
+        padding: 1.2rem 2rem;
     }
 
 
@@ -31,8 +33,7 @@ const StyledHeader = styled.header`
 
     @media only screen and (max-width: 600px) {
         & input {
-                margin-bottom: 5px;
-                padding: 1rem;
+                padding: 1.2rem 3rem;
                 width: 75%;
             }
 
@@ -40,6 +41,7 @@ const StyledHeader = styled.header`
             vertical-align: unset;
         }
     }
+
 
     & a {
         margin-top: 0.5rem;
