@@ -5,5 +5,7 @@ import Form from './Form';
 import Header from './Header';
 import Loader from './Loader';
 import Error from './Error';
+import Profile from './Profile';
+import Activities from './Activities';
 
-export { Logo, Toggle, Button, Form, Header, Loader, Error };
+export { Logo, Toggle, Button, Form, Header, Loader, Error, Profile, Activities };
