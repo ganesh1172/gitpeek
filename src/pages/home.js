@@ -1,23 +1,7 @@
-import React, { useContext } from 'react';
-import styled, { ThemeContext } from 'styled-components';
-import { Logo, Toggle, Form } from '../components';
+import React from 'react';
+import styled from 'styled-components';
+import { Logo, Form } from '../components';
 
-const StyledHeader = styled.span`
-    height: 7rem;
-    display: flex;
-    align-item: center;
-    padding: 3rem 6rem;
-    justify-content: flex-end;
-
-    & button svg {
-        font-size: 3rem;
-        vertical-align: middle;
-    }
-
-    @media only screen and (max-width: 600px) {
-        padding: 1rem 2rem;
-    }
-`;
 const Container = styled.div`
     display: flex;
     flex-direction: column;
@@ -25,6 +9,7 @@ const Container = styled.div`
     height: calc(100vh - 21rem);
     justify-content: center;
     align-items: center;
+    margin-top: 7rem;
     margin-bottom: 7rem;
 
     @media only screen and (max-width: 600px) {
@@ -32,22 +17,15 @@ const Container = styled.div`
     }
     & form {
         margin-top: 4rem;
-        & svg {
-            font-size: 2rem;
-        }
     }
     
 `;
 
 const Home = () => {
-    const { id, setTheme } = useContext(ThemeContext);
     return (
         <>
-            <StyledHeader>
-                <Toggle isDark={id === 'dark'} onToggle={setTheme} />
-            </StyledHeader>
             <Container>
-                <Logo width="280px" />
+                <Logo width="350px" />
                 <Form displaySpan />
             </Container>
         </>
