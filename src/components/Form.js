@@ -37,7 +37,7 @@ const Input = styled.input`
     &:focus {
         outline: none;
         box-shadow: 0 1rem 2rem 0 rgba(0,0,0, .2);
-        transform: translateY(-1px);
+        // transform: translateY(-1px);
         border-bottom: 3px solid #0098f0;
     }
     &::placeholder {
