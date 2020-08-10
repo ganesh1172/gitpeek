@@ -29,7 +29,7 @@ A web application to  :mag:  view a github's user profile.
 
 ## :zap: Installation
 
-1. Clone / Download [this](https://github.com/khusharth/gitpedia) repo.
+1. Clone / Download [this](https://github.com/ganesh1172/gitpeek.git) repo.
 2. Inside the project open a terminal and run:
     ```
     npm install
